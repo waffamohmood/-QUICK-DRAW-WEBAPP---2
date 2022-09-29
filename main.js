@@ -4,7 +4,7 @@ Element_of_array=quick_draw_data_set[random_no];
 document.getElementById("update_the_name").innerHTML="Sketch to be drawn : "+Element_of_array;
 
 timer_counter=0;
-timer_check="";
+timer_check="";1``
 drawn_sketch="";
 answer_holder="";
 score=0;
@@ -18,14 +18,14 @@ function setup(){
 function updateCanvas(){
     background("white");
     sketch=Element_of_array;
-    document.getElementById("sketch").innerHTML="Sketch to be drawn : "+sketch;
+    
     
 }
 function draw(){
     check_sketch();
  if (drawn_sketch==sketch){
     answer_holder="set";
-    score=score+1;
+   score=score+1;
     document.getElementById("score").innerHTML="Score: "+score;
  }
 }
@@ -33,11 +33,11 @@ function check_sketch(){
     timer_counter++;
     document.getElementById("timer").innerHTML="Timer: "+timer_counter;
     console.log("Timer count : "+timer_counter);
-    if(timer_counter == 400){
+    if(timer_counter > 400){
         timer_counter=0;
         timer_check="Time Up";
     }
-    if (timer_check=="Time Up" || answer_holder=="set"){
+    if (timer_check =="Time Up" || answer_holder =="set"){
         timer_check="";
         answer_holder="";
         updateCanvas();
